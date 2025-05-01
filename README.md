@@ -8,10 +8,10 @@ Campus\_SMS is an **AI-powered SMS chatbot** designed to provide students with a
 
 1. **A student sends an SMS inquiry** to the system.
 2. **AI processes the query** using preloaded syllabus and academic data.
-3. If the AI is **confident**, it responds instantly. UI
-4. If the AI is **not confident**, it offers **faculty escalation**.
-5. **Faculty members receive an email** with the student’s message and respond through a **web portal**.
-6. **Admins and faculty** can update FAQs, manage escalations, and send announcements via SMS.
+3. **AI using SMS API** will send the answer to the student.
+4. If the AI detects student is stuggling, it offers **faculty escalation**.
+5. **Faculty members receive a flag** on the student’s message and can view analytics **web portal**.
+6. **Admins and faculty** can update course documentss, manage escalations, and send announcements via SMS.
 
 ## **Key Features**
 
@@ -19,8 +19,7 @@ Campus\_SMS is an **AI-powered SMS chatbot** designed to provide students with a
 - **Twilio SMS Integration**: Handles student interactions through text messaging.
 - **Faculty Escalation System**: Emails unanswered queries to faculty for manual responses.
 - **Admin Dashboard**: Faculty/admins manage AI responses, escalations, and send SMS announcements.
-- **Secure Database (SQL Server)**: Stores inquiry history, escalations, and AI response logs.
-- **Cloud Deployment (Azure)**: Ensures scalability and availability.
+- **Secure Database (SQL Server)**: Stores inquiry history, escalations, and AI response logs (local when in development).
 
 ## **Database Structure**
 
@@ -33,12 +32,11 @@ Campus\_SMS is an **AI-powered SMS chatbot** designed to provide students with a
 
 - **Student SMS → AI Query Handling** (Preloaded FAQ Database)
 - **Confidence Check**: AI determines if it can answer accurately.
-  - If **Confident** → Sends AI-generated response via Twilio.
-  - If **Not Confident** → AI triggers **faculty escalation**.
+  - If **Confident** → AI does nothing.
+  - If **Not Confident** → AI offers **faculty escalation**.
 - **Faculty Escalation**:
-  - Faculty receives **email notification**.
-  - Faculty logs into the **web portal** and responds.
-- **Admin Portal Functions**:
+  - Faculty logs into the **web portal** and can view analytics.
+- **Admin/Faculty Portal Functions**:
   - Manage users (faculty & students).
   - Monitor AI response accuracy & update FAQs.
   - Send **bulk SMS announcements**.
@@ -109,13 +107,13 @@ Otherwise you will run into permission problems
 
 - **Robert Mahoney** - AI & Twilio Setup
 - **Andrew Holmes** - Database & Backend
-- **Gage Cook** - Database & Backend
-- **Johnny Arnett** - Frontend & GitHub Management
+- **Gage Cook** - Frontend & Backend
+- **Johnny Arnett** - Full Stack & GitHub Management
 - **Samuel Hornick** - Frontend Development
 
 ## **Project Links**
 
-- **GitHub Repository**: [Campus\_SMS Repo](https://github.com/jlarnett/Campus_SMS)
+- **Main GitHub Repository**: [Campus\_SMS Repo](https://github.com/jlarnett/Campus_SMS)
 - **Live Demo (If Available)**: [CampusSMS Web Portal](https://campussms-bbfyaza8gkecgpd6.eastus-01.azurewebsites.net/Identity/Account/Login)
 
 
